@@ -7,20 +7,6 @@ public class Inventario {
 	public Inventario() {
 		super();
 	}
-
-	public void actualizarCantidadProducto() {
-		
-	}
-	
-	public boolean verificarProducto(Producto producto) {
-		for (Producto p : this.productos) {
-			if (producto.equals(p)) {
-				return true;
-			}
-		}
-		return false;
-	}
-
 	public ArrayList<Producto> getProductos() {
 		return productos;
 	}
@@ -28,6 +14,30 @@ public class Inventario {
 	public void setProductos(ArrayList<Producto> productos) {
 		this.productos = productos;
 	}
+	
+
+	public void actualizarCantidadProducto() {
+		
+	}
+	public void eliminarProducto() {
+		this.productos.remove
+		
+	}
+	public void agregarProducto() {
+		
+	}
+	
+	public static Producto verificarProducto(Producto producto) {
+		for (Producto p : this.productos) {
+			if (producto.equals(p)) {
+				return p;
+			}
+		}
+		return null;
+	}
+
+	
+	
 	
 	
 }
