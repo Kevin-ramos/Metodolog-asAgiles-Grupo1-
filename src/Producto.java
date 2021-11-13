@@ -37,9 +37,9 @@ public void setCantidad(int cantidad) {
 }
 
 public static Producto registrar(String codigo, String nombre, int cantidad) {
-	this.codigo=codigo
-	this.nombre=nombre
-	this.cantidad=cantidad
+	this.codigo=codigo;
+	this.nombre=nombre;
+	this.cantidad=cantidad;
 	return this;
 }
 
