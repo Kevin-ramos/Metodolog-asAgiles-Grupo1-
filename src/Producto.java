@@ -36,12 +36,13 @@ public void setCantidad(int cantidad) {
 	this.cantidad = cantidad;
 }
 
-public void registrar() {
+public static Producto registrar(String codigo, String nombre, int cantidad) {
+	this.codigo=codigo
+	this.nombre=nombre
+	this.cantidad=cantidad
+	return this;
+}
 
-}
-public void actualizarCantidad() {
-	
-	
-}
+
 }
 
