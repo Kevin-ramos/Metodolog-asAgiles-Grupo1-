@@ -36,12 +36,21 @@ public void setCantidad(int cantidad) {
 	this.cantidad = cantidad;
 }
 
-public static Producto registrar(String codigo, String nombre, int cantidad) {
-	this.codigo=codigo
-	this.nombre=nombre
-	this.cantidad=cantidad
-	return this;
+public static void registrar(String codigo, String nombre, int cantidad, Inventario inventario) {
+	Producto p = new Producto(codigo, nombre, cantidad);
+	if(inventario.verificarProducto(p) == -1) {
+		inventario.agregarProducto(p);
+		System.out.println("Producto ingresado con éxito.");
+	}else {
+		System.out.println("El producto ya existe.");
+	}
 }
+
+@Override
+public String toString() {
+	return "Código= " + codigo + ", Nombre= " + nombre + ", Cantidad= " + cantidad + ".";
+}
+
 
 
 }
