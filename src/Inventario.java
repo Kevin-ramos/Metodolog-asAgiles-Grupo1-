@@ -21,8 +21,8 @@ public class Inventario {
 	}
 	public void eliminarProducto(String codigo) {
 		Producto producto = this.consultarProducto(codigo);
-		int indice = this.verificarProducto(producto);
-		if(indice != -1) {
+
+		if(this.verificarProducto(producto) != -1) {
 			this.productos.remove(indice);
 			System.out.println("El producto fue eliminado exitosamente.");
 		}else {
