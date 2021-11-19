@@ -51,7 +51,16 @@ public String toString() {
 	return "Código= " + codigo + ", Nombre= " + nombre + ", Cantidad= " + cantidad + ".";
 }
 
+	@Override
+	public int hashCode() {
+		return nombre.hashCode();
+	}
 
-
+	@Override
+	public boolean equals(Object obj) {
+	Producto p=(Producto)obj;
+		return p.getNombre().equals(this.getNombre());
+		)
+	}
 }
 
