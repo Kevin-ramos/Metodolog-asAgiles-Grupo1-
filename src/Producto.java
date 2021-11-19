@@ -38,7 +38,8 @@ public void setCantidad(int cantidad) {
 
 public static void registrar(String codigo, String nombre, int cantidad, Inventario inventario) {
 	Producto p = new Producto(codigo,nombre, cantidad);
-	if(inventario.verificarProducto(p) == -1) {
+	int indiceDelProductoEnInventario =inventario.verificarProducto(p)
+	if( indiceDelProductoEnInventario == -1) {
 		inventario.agregarProducto(p);
 		System.out.println("Producto ingresado con éxito.");
 	}else {

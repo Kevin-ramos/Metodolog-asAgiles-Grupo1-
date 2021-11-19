@@ -32,9 +32,10 @@ public class Inventario {
 	public void agregarProducto(Producto producto) {
 		this.productos.add(producto);
 	}
-	
+
 	public  int verificarProducto(Producto producto) {
-		if (recorrerProducto(producto) != -1) {
+		int indiceProductoEnInventario = recorrerProducto(producto)
+		if (indiceProductoEnInventario != -1) {
 			return recorrerProducto(producto);
 		}
 		return -1;
