@@ -34,14 +34,13 @@ public class Inventario {
 	}
 	
 	public  int verificarProducto(Producto producto) {
-		int indice = buscarProducto(producto);
-		if (indice != -1) {
-			return indice;
+		if (recorrerProducto(producto) != -1) {
+			return recorrerProducto(producto);
 		}
 		return -1;
 	}
 
-	public int buscarProducto(Producto producto) {
+	public int recorrerProducto(Producto producto) {
 		int indice = 0;
 		for (Producto p : this.productos) {
 			if (producto.equals(p)) {
@@ -52,6 +51,7 @@ public class Inventario {
 		return -1;
 	}
 
+
 	public Producto consultarProducto(String codigo) {
 		for (Producto p : this.productos) {
 			if (p.getCodigo().equals(codigo)) {
@@ -60,7 +60,7 @@ public class Inventario {
 		}
 		return null;
 	}
-	
+
 
 	
 }
