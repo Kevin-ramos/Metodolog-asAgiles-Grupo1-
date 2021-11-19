@@ -14,7 +14,7 @@ public class Test {
 		int opcion2;
 	    Scanner entrada = new Scanner(System.in);
 	    
-	    Producto.registrar("1", "Manzana", 30, inventario);
+	    Producto.registrar("1", "Manzana",30, inventario);
 	    Producto.registrar("2", "Pera", 50, inventario);
 	    Producto.registrar("3", "Lata de Atún", 100, inventario);
 	    Producto.registrar("4", "Quintal de Arroz", 10, inventario);
