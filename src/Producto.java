@@ -59,8 +59,8 @@ public String toString() {
 	@Override
 	public boolean equals(Object obj) {
 	Producto p=(Producto)obj;
-		return p.getNombre().equals(this.getNombre());
-		)
+		return p.getNombre().equals(this.getNombre()) && p.getCodigo().equals(this.getCodigo());
+
 	}
 }
 
