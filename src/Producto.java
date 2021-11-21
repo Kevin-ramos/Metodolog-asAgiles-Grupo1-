@@ -41,7 +41,7 @@ public void setCantidad(int cantidad) {
 
 @Override
 public String toString() {
-	return "Cï¿½digo= " + codigo + ", Nombre= " + nombre + ", Cantidad= " + cantidad + ".";
+	return "Código= " + codigo + ", Nombre= " + nombre + ", Cantidad= " + cantidad + ".";
 }
 
 	@Override

@@ -67,7 +67,7 @@ public class Test {
                             case 3:
                             	System.out.print("Ingrese el código del producto a eliminar: ");
                             	codigo = entrada.nextLine();
-                                inventario.eliminarProducto(codigo);
+                                inventario.getProductos().eliminarProducto(inventario, codigo);
                                 break;
                             case 4:
                                 System.out.println("\nSaliendo de Producto.\n");

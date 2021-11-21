@@ -1,40 +1,28 @@
 import java.util.ArrayList;
 
 public class Inventario {
-	private ArrayList<Producto> productos = new ArrayList<Producto>();
+	ListaProductos productos = new ListaProductos();
 	
 	
-	public Inventario() {
-		super();
-	}
-	public ArrayList<Producto> getProductos() {
+	
+	public ListaProductos getProductos() {
 		return productos;
 	}
 
-	public void setProductos(ArrayList<Producto> productos) {
+	public void setProductos(ListaProductos productos) {
 		this.productos = productos;
 	}
-	
 
-	public void actualizarCantidadProducto() {
-		
-	}
-
-	public void eliminarProducto(String codigo) {
-		Producto producto = this.consultarProducto(codigo);
-
+	public void actualizarCantidad(int nuevaCantidad, String codigo) {
+		Producto producto =  this.consultarProducto(codigo);
 		if(this.verificarProducto(producto) != -1) {
-			this.productos.remove(this.verificarProducto(producto));
+			this.productos.getListaProductos().get(this.verificarProducto(producto)).setCantidad(nuevaCantidad);
 			System.out.println("El producto fue eliminado exitosamente.");
 		}else {
 			System.out.println("El producto ingresado no existe.");
 		}
-
+		
 	}
-	public void agregarProducto(Producto producto) {
-		this.productos.add(producto);
-	}
-
 
 	public  int verificarProducto(Producto producto) {
 		int indiceProductoEnInventario = recorrerProducto(producto);
@@ -46,7 +34,7 @@ public class Inventario {
 
 	public int recorrerProducto(Producto producto) {
 		int indice = 0;
-		for (Producto p : this.productos) {
+		for (Producto p : this.productos.getListaProductos()) {
 			if (producto.equals(p)) {
 				return indice;
 			}
@@ -57,7 +45,7 @@ public class Inventario {
 
 
 	public Producto consultarProducto(String codigo) {
-		for (Producto p : this.productos) {
+		for (Producto p : this.productos.getListaProductos()) {
 			if (p.getCodigo().equals(codigo)) {
 				return p;
 			}
@@ -70,8 +58,8 @@ public class Inventario {
 		Producto p = new Producto(codigo,nombre, cantidad);
 		int indiceDelProductoEnInventario = inventario.verificarProducto(p);
 		if( indiceDelProductoEnInventario == -1) {
-			inventario.agregarProducto(p);
-			System.out.println("Producto ingresado con ï¿½xito.");
+			inventario.getProductos().agregarProducto(p);
+			System.out.println("Producto ingresado con éxito.");
 		}else {
 			System.out.println("El producto ya existe.");
 		}
