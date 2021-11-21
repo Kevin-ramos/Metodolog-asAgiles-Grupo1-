@@ -37,20 +37,11 @@ public void setCantidad(int cantidad) {
 }
 
 
-public static void registrar(String codigo, String nombre, int cantidad, Inventario inventario) {
-	Producto p = new Producto(codigo,nombre, cantidad);
-	int indiceDelProductoEnInventario =inventario.verificarProducto(p)
-	if( indiceDelProductoEnInventario == -1) {
-		inventario.agregarProducto(p);
-		System.out.println("Producto ingresado con éxito.");
-	}else {
-		System.out.println("El producto ya existe.");
-	}
-}
+
 
 @Override
 public String toString() {
-	return "Código= " + codigo + ", Nombre= " + nombre + ", Cantidad= " + cantidad + ".";
+	return "Cï¿½digo= " + codigo + ", Nombre= " + nombre + ", Cantidad= " + cantidad + ".";
 }
 
 	@Override

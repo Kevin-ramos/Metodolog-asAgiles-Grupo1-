@@ -59,12 +59,22 @@ public class Inventario {
 	public Producto consultarProducto(String codigo) {
 		for (Producto p : this.productos) {
 			if (p.getCodigo().equals(codigo)) {
-
 				return p;
 			}
 		}
 		return null;
 	}
 
+
+	public static void registrar(String codigo, String nombre, int cantidad) {
+		Producto p = new Producto(codigo,nombre, cantidad);
+		int indiceDelProductoEnInventario = this.verificarProducto(p)
+		if( indiceDelProductoEnInventario == -1) {
+			this.agregarProducto(p);
+			System.out.println("Producto ingresado con �xito.");
+		}else {
+			System.out.println("El producto ya existe.");
+		}
+	}
 	
 }
