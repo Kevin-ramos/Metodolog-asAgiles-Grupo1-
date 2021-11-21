@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class Test {
 
@@ -5,18 +6,18 @@ public class Test {
 		// TODO Auto-generated method stub
 		
 		
-
+		Inventario inventario = new Inventario();
 		System.out.println("Bienvenido al Sistema de inventario para bodegas de alimentos (SIBA)");
 		
 		int opcion;
 		int opcion2;
 	    Scanner entrada = new Scanner(System.in);
 	    
-	    Producto.registrar("1", "Manzana",30, inventario);
+	    /*Producto.registrar("1", "Manzana",30, inventario);
 	    Producto.registrar("2", "Pera", 50, inventario);
 	    Producto.registrar("3", "Lata de Atún", 100, inventario);
 	    Producto.registrar("4", "Quintal de Arroz", 10, inventario);
-	    Producto.registrar("5", "Chocolate Galak", 33, inventario);
+	    Producto.registrar("5", "Chocolate Galak", 33, inventario);*/
 	    
 		do{
 			
@@ -52,7 +53,7 @@ public class Test {
                             	System.out.print("Ingrese el cantidad del nuevo producto: ");
                             	cantidad = entrada.nextInt();
                             	entrada.nextLine();
-                            	Producto.registrar(codigo, nombre, cantidad, inventario);
+                            	Inventario.registrar(codigo, nombre, cantidad, inventario);
                                 break;
                             case 2:
                             	System.out.print("Ingrese el código del producto a consultar: ");

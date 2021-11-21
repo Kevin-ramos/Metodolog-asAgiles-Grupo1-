@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Inventario {
-	private ArrayList<Producto> productos;
+	private ArrayList<Producto> productos = new ArrayList<Producto>();
 	
 	
 	public Inventario() {
@@ -24,20 +24,20 @@ public class Inventario {
 		Producto producto = this.consultarProducto(codigo);
 
 		if(this.verificarProducto(producto) != -1) {
-			this.productos.remove(indice);
+			this.productos.remove(this.verificarProducto(producto));
 			System.out.println("El producto fue eliminado exitosamente.");
 		}else {
 			System.out.println("El producto ingresado no existe.");
 		}
 
 	}
-	public void agregarProducto() {
-		
+	public void agregarProducto(Producto producto) {
+		this.productos.add(producto);
 	}
 
 
 	public  int verificarProducto(Producto producto) {
-		int indiceProductoEnInventario = recorrerProducto(producto)
+		int indiceProductoEnInventario = recorrerProducto(producto);
 		if (indiceProductoEnInventario != -1) {
 			return recorrerProducto(producto);
 		}
@@ -66,11 +66,11 @@ public class Inventario {
 	}
 
 
-	public static void registrar(String codigo, String nombre, int cantidad) {
+	public static void registrar(String codigo, String nombre, int cantidad, Inventario inventario) {
 		Producto p = new Producto(codigo,nombre, cantidad);
-		int indiceDelProductoEnInventario = this.verificarProducto(p)
+		int indiceDelProductoEnInventario = inventario.verificarProducto(p);
 		if( indiceDelProductoEnInventario == -1) {
-			this.agregarProducto(p);
+			inventario.agregarProducto(p);
 			System.out.println("Producto ingresado con �xito.");
 		}else {
 			System.out.println("El producto ya existe.");
