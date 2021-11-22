@@ -17,7 +17,7 @@ public class Inventario {
 		Producto producto =  this.consultarProducto(codigo);
 		if(this.verificarProducto(producto) != -1) {
 			this.productos.getListaProductos().get(this.verificarProducto(producto)).setCantidad(nuevaCantidad);
-			System.out.println("El producto fue eliminado exitosamente.");
+			System.out.println("El producto fue actualizado exitosamente.");
 		}else {
 			System.out.println("El producto ingresado no existe.");
 		}
